@@ -25,7 +25,7 @@ const register = (req, res) => {
                 message: 'Server error--please try again'
             })
             // password hashing
-            bcrypts.hash(req.body.password, salt, (err, hash) => {
+            bcrypt.hash(req.body.password, salt, (err, hash) => {
                 if (err) return res.status(500).json({
                     status: 500,
                     message: 'Server error; please try again'

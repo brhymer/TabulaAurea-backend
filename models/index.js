@@ -14,5 +14,6 @@ mongoose.connect(connectionString, configOptions)
 
 module.exports = {
     Income: require('./income'),
-    Expense: require('./expense')
+    Expense: require('./expense'),
+    User: require('./user')
 }

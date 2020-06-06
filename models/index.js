@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const connectionString = process.env.MONGODB_URI || "mongodb:http://localhost:27017/proj4"
+const connectionString = process.env.MONGODB_URI || "mongodb://localhost:27017/proj4"
 const configOptions = {
     useNewUrlParser: true,
     useCreateIndex: true,

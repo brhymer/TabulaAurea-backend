@@ -1,4 +1,4 @@
-const db = require('mongoose')
+const db = require('../models')
 
 const index = (req, res) => {
     db.Expense.find({}, (err, foundExpenses) => {

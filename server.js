@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const cors = require('cors');
-
-const port = 3001;
+const routes = require('./routes');
+const port = process.env.PORT || 3001;
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
@@ -28,8 +28,9 @@ app.use(session({
 }))
 
 // API routes  -- Needs updating
-app.use('/incomes', routes.incomes)
-app.use('/expenses', routes.expenses)
+app.use('/auth', routes.auth)
+// app.use('/incomes', routes.incomes)
+// app.use('/expenses', routes.expenses)
 
 
 app.listen(port, () => {

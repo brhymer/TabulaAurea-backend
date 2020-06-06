@@ -7,7 +7,7 @@ const port = 3001;
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 const corsOptions = {
     origin: [`http://localhost:3000`],
@@ -27,8 +27,9 @@ app.use(session({
     }
 }))
 
-// app.use('/') FIGURE OUT API routes
-
+// API routes  -- Needs updating
+app.use('/incomes', routes.incomes)
+app.use('/expenses', routes.expenses)
 
 
 app.listen(port, () => {

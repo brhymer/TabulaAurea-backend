@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const MongoStore = require('connect-mongo')(session);
+
 const port = 3001;
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 app.use(bodyParser.json());
 
@@ -17,7 +18,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(session({
-
     store: new MongoStore({ url: "mongodb://localhost:27017/proj4" }),
     secret: "secret",
     resave: false,

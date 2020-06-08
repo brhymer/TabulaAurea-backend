@@ -16,5 +16,6 @@ module.exports = {
     Income: require('./income'),
     Expense: require('./expense'),
     Asset: require('./asset'),
+    Liability: require('./liability'),
     User: require('./user')
 }

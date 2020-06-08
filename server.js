@@ -29,9 +29,9 @@ app.use(session({
 
 // API routes  -- Needs updating
 app.use('/auth', routes.auth)
-// app.use('/incomes', routes.incomes)
-// app.use('/expenses', routes.expenses)
-
+// app.use('/month', routes.month)
+app.use('/incomes', routes.incomes)
+app.use('/expenses', routes.expenses)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)

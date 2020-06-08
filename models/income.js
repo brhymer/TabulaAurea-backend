@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-const IncomeSchema = mongoose.Schema({
-    name: String,
-    amount: Number,
+const IncomeSchema = new mongoose.Schema({
+    name: {type: String, required: true},
+    amount: {type: Number, required: true},
     userId: {type: mongoose.Schema.Types.ObjectId, ref: "User" }   
 })
 

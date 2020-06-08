@@ -12,17 +12,17 @@ const index = (req, res) => {
     })
 }
 
-const show = (req, res) => {
-    db.Expense.findById(req.params.id, (err, foundExpense) => {
-        if (err) console.log('Error in exp show: ', err)
+// const show = (req, res) => {
+//     db.Expense.findById(req.params.id, (err, foundExpense) => {
+//         if (err) console.log('Error in exp show: ', err)
 
-        if (!foundExpense) return res.json({
-            message: 'No expense found at that ID'
-        })
+//         if (!foundExpense) return res.json({
+//             message: 'No expense found at that ID'
+//         })
 
-        res.status(200).json({ expense: foundExpense })
-    })
-}
+//         res.status(200).json({ expense: foundExpense })
+//     })
+// }
 
 const create = (req, res) => {
     db.Expense.create(req.body, (err, savedExpense) => {
@@ -44,7 +44,8 @@ const update = (req, res) => {
 }
 
 const destroy = (req, res) => {
-    db.Expense.findByIdAndDestroy(req.params.id, (err, deletedExpense) => {
+    db.Expense.findByIdAndDelete(req.params.id, (err, deletedExpense) => {
+        // console.log(req.params)  id: undefined
         if (err) console.log('Error in exp delete: ', err)
 
         if (!deletedExpense) return res.json({
@@ -56,5 +57,5 @@ const destroy = (req, res) => {
 }
 
 module.exports = {
-    index, show, create, update, destroy
+    index, create, update, destroy
 }

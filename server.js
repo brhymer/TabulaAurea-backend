@@ -32,6 +32,7 @@ app.use('/auth', routes.auth)
 // app.use('/month', routes.month)
 app.use('/incomes', routes.incomes)
 app.use('/expenses', routes.expenses)
+app.use('/assets', routes.assets)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)

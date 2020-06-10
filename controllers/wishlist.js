@@ -8,7 +8,7 @@ const index = (req, res) => {
             message: 'No wishes found'
         })
 
-        res.status(200).json({ wishes: foundWishes })
+        res.status(200).json({ wishlist: foundWishes })
     })
 }
 

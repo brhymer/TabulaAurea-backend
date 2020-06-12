@@ -11,7 +11,7 @@ require('dotenv').config();
 app.use(express.json());
 
 const corsOptions = {
-    origin: [`http://localhost:3000`],
+    origin: [`http://localhost:3000`, `https://murmuring-chamber-41495.herokuapp.com/`],
     credentials: true,
     optionsSuccessStatus: 200
 }

@@ -6,6 +6,7 @@ const routes = require('./routes');
 const port = process.env.PORT || 3001;
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+require('dotenv').config();
 
 app.use(express.json());
 
@@ -19,7 +20,7 @@ app.use(cors(corsOptions));
 
 app.use(session({
     store: new MongoStore({ url: "mongodb://localhost:27017/proj4" }),
-    secret: "secret",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

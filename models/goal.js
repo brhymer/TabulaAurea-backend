@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const GoalSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    dueBy: {type: Date},
+    date: {type: Date},
     userId: {type: mongoose.Schema.Types.ObjectId, ref: "User"}
 })
 

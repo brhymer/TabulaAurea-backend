@@ -19,7 +19,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(session({
-    store: new MongoStore({ url: "mongodb://localhost:27017/proj4" }),
+    store: new MongoStore({ url: (process.env.MONGODB_URI || "mongodb://localhost:27017/proj4")}),
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,

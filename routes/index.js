@@ -6,5 +6,7 @@ module.exports = {
     goals: require('./goals'),
     wishlist: require('./wishlist'),
     auth: require('./auth'),
-    user: require('./user')
+    user: require('./user'),
+    gold: require('./gold'),
+    silver: require('./silver'),
 }

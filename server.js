@@ -8,6 +8,12 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://forex-data-feed.swissquote.com/public-quotes/"); 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 app.use(express.json());
 
 const corsOptions = {
@@ -36,6 +42,8 @@ app.use('/assets', routes.assets)
 app.use('/liabilities', routes.liabilities)
 app.use('/goals', routes.goals)
 app.use('/wishlist', routes.wishlist)
+app.use('/gold', routes.gold)
+app.use('/silver', routes.silver)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)

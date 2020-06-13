@@ -6,5 +6,5 @@ module.exports = {
     goals: require('./goals'),
     wishlist: require('./wishlist'),
     auth: require('./auth'),
-    users: require('./users')
+    users: require('./users'),
 }

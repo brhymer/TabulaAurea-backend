@@ -1,34 +1,6 @@
 const db = require('../models')
 const bcrypt = require('bcrypt')
 
-// async function getUser(searchParameters) {
-//     return await db.User.findOne(searchParameters);
-//   }
-
-// async function getUserWithIncomes(id) {
-//     return await db.User.findById(id).populate({ path: "incomes" }).exec();
-// }
-
-// async function getUserWithExpenses(id) {
-//     return await db.User.findById(id).populate({ path: "expenses" }).exec();
-// }
-
-// async function getUserWithAssets(id) {
-//     return await db.User.findById(id).populate({ path: "assets" }).exec();
-// }
-
-// async function getUserWithLiabilities(id) {
-//     return await db.User.findById(id).populate({ path: "liabilities" }).exec();
-// }
-
-// async function getUserWithGoals(id) {
-//     return await db.User.findById(id).populate({ path: "goals" }).exec();
-// }
-
-// async function getUserWithWishlist(id) {
-//     return await db.User.findById(id).populate({ path: "wishlist" }).exec();
-// }
-
 const register = (req, res) => {
     if (!req.body.name || !req.body.email || !req.body.password) {
         return res.status(400).json({
@@ -118,11 +90,4 @@ module.exports = {
     register,
     login,
     logout,
-    // getUserWithIncomes,
-    // getUserWithExpenses,
-    // getUserWithAssets,
-    // getUserWithLiabilities,
-    // getUserWithGoals,
-    // getUserWithWishlist,
-    // getUser
 }

@@ -15,10 +15,22 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     expenses: [{
-        type: mongoose.Schema.Types.ObjectId, ref: "expense"    
+        type: mongoose.Schema.Types.ObjectId, ref: "Expense"    
     }],
     incomes: [{
-        type: mongoose.Schema.Types.ObjectId, ref: "income"    
+        type: mongoose.Schema.Types.ObjectId, ref: "Income"    
+    }],
+    assets: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "Asset"    
+    }],
+    liabilities: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "Liability"    
+    }],
+    goals: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "Goal"    
+    }],
+    wishlist: [{
+        type: mongoose.Schema.Types.ObjectId, ref: "Wish"    
     }],
 })
 

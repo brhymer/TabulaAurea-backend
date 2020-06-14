@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-// const bodyParser = require('body-parser');
 const cors = require('cors');
 const routes = require('./routes');
 const port = process.env.PORT || 3001;
@@ -25,8 +24,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(session({
-    store: new MongoStore({ url: (process.env.MONGODB_URI || "mongodb://localhost:27017/proj4")}),
-    secret: process.env.SECRET,
+    store: new MongoStore({ url: (
+        // process.env.MONGODB_URI || 
+        "mongodb://localhost:27017/proj4")}),
+    secret: "words", 
+    // process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

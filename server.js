@@ -27,8 +27,7 @@ app.use(session({
     store: new MongoStore({ url: (
         // process.env.MONGODB_URI || 
         "mongodb://localhost:27017/proj4")}),
-    secret: "words", 
-    // process.env.SECRET,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

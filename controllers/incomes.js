@@ -1,7 +1,6 @@
 const db = require('../models')
 
 const index = (req, res) => {
-    // if (!req.session.currentUser) return res.redirect("/auth/login");
     db.Income.find({}, (err, foundIncomes) => {
         if (err) console.log('Error in inc index: ', err) 
 
@@ -12,19 +11,6 @@ const index = (req, res) => {
         res.status(200).json({ incomes: foundIncomes })
     })
 }
-
-// slated for deletion
-// const show = (req, res) => {
-//     db.Income.findById(req.params.id, (err, foundIncome) => {
-//         if (err) console.log('Error in inc show: ', err)
-
-//         if (!foundIncome) return res.json({
-//             message: "No income with that ID"
-//         })
-
-//         res.status(200).json({ income: foundIncome })
-//     })
-// }
 
 const create = (req, res) => {
     db.Income.create(req.body, (err, savedIncome) => {
@@ -59,5 +45,5 @@ const destroy = (req, res) => {
 }
 
 module.exports = {
-    index, create, update, destroy
+    index, create, update, destroy,
 }

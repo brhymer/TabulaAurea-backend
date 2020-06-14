@@ -1,6 +1,34 @@
 const db = require('../models')
 const bcrypt = require('bcrypt')
 
+// async function getUser(searchParameters) {
+//     return await db.User.findOne(searchParameters);
+//   }
+
+// async function getUserWithIncomes(id) {
+//     return await db.User.findById(id).populate({ path: "incomes" }).exec();
+// }
+
+// async function getUserWithExpenses(id) {
+//     return await db.User.findById(id).populate({ path: "expenses" }).exec();
+// }
+
+// async function getUserWithAssets(id) {
+//     return await db.User.findById(id).populate({ path: "assets" }).exec();
+// }
+
+// async function getUserWithLiabilities(id) {
+//     return await db.User.findById(id).populate({ path: "liabilities" }).exec();
+// }
+
+// async function getUserWithGoals(id) {
+//     return await db.User.findById(id).populate({ path: "goals" }).exec();
+// }
+
+// async function getUserWithWishlist(id) {
+//     return await db.User.findById(id).populate({ path: "wishlist" }).exec();
+// }
+
 const register = (req, res) => {
     if (!req.body.name || !req.body.email || !req.body.password) {
         return res.status(400).json({
@@ -62,7 +90,8 @@ const login = (req, res) => {
             if (err) return res.status(500).json({ 
                 status: 500, message: 'Error. Please try again' }); 
             if (isMatch) {
-                req.session.currentUser = { id: foundUser._id };
+                // req.session.currentUser = { id: foundUser._id };
+                req.session.currentUser = foundUser._id;
                 return res.status(200).json({ 
                     status: 200, message: 'Successful login', data: foundUser._id });
             } else {
@@ -88,5 +117,12 @@ const logout = (req, res) => {
 module.exports = {
     register,
     login,
-    logout
+    logout,
+    // getUserWithIncomes,
+    // getUserWithExpenses,
+    // getUserWithAssets,
+    // getUserWithLiabilities,
+    // getUserWithGoals,
+    // getUserWithWishlist,
+    // getUser
 }

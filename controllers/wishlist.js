@@ -31,6 +31,7 @@ const update = (req, res) => {
     })
 }
 
+
 const destroy = (req, res) => {
     db.Wish.findByIdAndDelete(req.params.id, (err, deletedWish) => {
         if (err) console.log('Error in wish delete: ', err)
@@ -44,5 +45,5 @@ const destroy = (req, res) => {
 }
 
 module.exports = {
-    index, create, update, destroy
+    index, create, update, destroy,
 }

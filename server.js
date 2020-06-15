@@ -18,7 +18,7 @@ app.use(express.json());
 const corsOptions = {
     origin: [
         // `http://localhost:3000`, 
-        `https://tabulaaurea.herokuapp.com/`],
+        `https://tabulaaurea.herokuapp.com`],
     credentials: true,
     optionsSuccessStatus: 200
 }

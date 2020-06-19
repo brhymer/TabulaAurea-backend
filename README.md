@@ -25,10 +25,10 @@ The project is a MERN stack using native CSS.  It will make use of React Router 
 
 This wireframe details the central 2 pages that constitute the app: .
 
-![Wireframe](./public/wireframe.png)
+![Wireframe](./wireframe.png)
 
 ## Data models
 This app will consist of a user which has a one-to-many relationship to six simple data models, none of which will relate to one another.
 
-![Data Model](./public/data-model.png)
+![Data Model](./data-model.png)
 
